@@ -27,6 +27,7 @@ public class NotificacionServiceImpl implements NotificacionInterfaceService {
     @Override
     public Notificacion buscarNotificacion(Notificacion notificacion) {
         Notificacion resultado = null;
+        
         try {
             resultado = (Notificacion) repository.findAll();
 

@@ -32,10 +32,10 @@ public class NotificacionController {
     }
 
     @GetMapping(value = "/buscarNotificacion")
-    public Notificacion buscarNotificacion(@RequestBody Notificacion notificacion) {
+    public Notificacion buscarTipoNotificacion(@RequestBody Notificacion tipoNotificacion) {
         Notificacion buscar = null;
         try {
-            buscar = service.buscarNotificacion(notificacion);
+            buscar = service.buscarNotificacion(tipoNotificacion);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -56,7 +56,7 @@ public class NotificacionController {
     }
 
     @DeleteMapping(value = "/eliminarNotificacion/{idNotificacion}")
-    public void eliminarLogin(@PathVariable int idNotificacion) {
+    public void eliminarNotificacion(@PathVariable int idNotificacion) {
         try {
             service.eliminarNotificacion(idNotificacion);
         } catch (Exception e) {

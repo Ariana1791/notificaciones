@@ -26,10 +26,13 @@ public class NotificacionServiceImpl implements NotificacionInterfaceService {
 
     @Override
     public Notificacion buscarNotificacion(Notificacion notificacion) {
-        Notificacion resultado = null;
-        
+       Notificacion resultado = null;
+
         try {
-            resultado = (Notificacion) repository.findAll();
+            resultado = repository.findByTipoNotificacion(notificacion.getTipoNotificacion ());
+            System.out.println("buscar por tipo de notificacion" + notificacion.getTipoNotificacion());
+            return resultado;
+            
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
